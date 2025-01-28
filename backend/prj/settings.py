@@ -78,6 +78,7 @@ INSTALLED_APPS = [
     'treebeard',
     'sorl.thumbnail',   # Default thumbnail backend, can be replaced
     'django_tables2',
+    'django_extensions',
 ]
 
 
@@ -128,6 +129,8 @@ TEMPLATES = [
                 'oscar.apps.checkout.context_processors.checkout',
                 'oscar.apps.communication.notifications.context_processors.notifications',
                 'oscar.core.context_processors.metadata',
+
+                'apps.catalogue.context_processors.menu_links',
             ],
         },
     },

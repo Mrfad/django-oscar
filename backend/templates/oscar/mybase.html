@@ -1,4 +1,7 @@
+
+{% load i18n %}
 {% load static %}
+
 <!doctype html>
 <html lang="en">
 
@@ -44,7 +47,8 @@
     </noscript>
 
     <!-- Page Title -->
-    <title>Alpine | Bootstrap 5 Ecommerce HTML Template</title>
+    <title>{% block title %}{% trans 'MyShp' %}{% endblock %}</title>
+
     
 </head>
 <body class="">
@@ -333,7 +337,7 @@
 {% block content %}
 {% endblock content %}
 
-{% include 'footer.html' %}
+{% include 'oscar/myfooter.html' %}
     <!-- Theme JS -->
     <!-- Vendor JS -->
     <script src="{% static 'assets/js/vendor.bundle.js' %}"></script>

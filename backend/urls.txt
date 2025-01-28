@@ -1,0 +1,536 @@
+/	django.views.generic.base.RedirectView	home
+/accounts/	oscar.apps.customer.views.AccountSummaryView	customer:summary
+/accounts/addresses/	oscar.apps.customer.views.AddressListView	customer:address-list
+/accounts/addresses/<int:pk>/	oscar.apps.customer.views.AddressUpdateView	customer:address-detail
+/accounts/addresses/<int:pk>/delete/	oscar.apps.customer.views.AddressDeleteView	customer:address-delete
+/accounts/addresses/<pk>/<action>/	oscar.apps.customer.views.AddressChangeStatusView	customer:address-change-status
+/accounts/addresses/add/	oscar.apps.customer.views.AddressCreateView	customer:address-create
+/accounts/alerts/	oscar.apps.customer.alerts.views.ProductAlertListView	customer:alerts-list
+/accounts/alerts/cancel/<int:pk>/	oscar.apps.customer.alerts.views.ProductAlertCancelView	customer:alerts-cancel-by-pk
+/accounts/alerts/cancel/key/<str:key>/	oscar.apps.customer.alerts.views.ProductAlertCancelView	customer:alerts-cancel-by-key
+/accounts/alerts/confirm/<str:key>/	oscar.apps.customer.alerts.views.ProductAlertConfirmView	customer:alerts-confirm
+/accounts/alerts/create/<int:pk>/	oscar.apps.customer.alerts.views.ProductAlertCreateView	customer:alert-create
+/accounts/change-password/	oscar.apps.customer.views.ChangePasswordView	customer:change-password
+/accounts/emails/	oscar.apps.customer.views.EmailHistoryView	customer:email-list
+/accounts/emails/<int:email_id>/	oscar.apps.customer.views.EmailDetailView	customer:email-detail
+/accounts/login/	oscar.apps.customer.views.AccountAuthView	customer:login
+/accounts/logout/	oscar.apps.customer.views.LogoutView	customer:logout
+/accounts/notifications/	django.views.generic.base.RedirectView
+/accounts/notifications/<int:pk>/	oscar.apps.communication.notifications.views.DetailView	customer:notifications-detail
+/accounts/notifications/archive/	oscar.apps.communication.notifications.views.ArchiveView	customer:notifications-archive
+/accounts/notifications/inbox/	oscar.apps.communication.notifications.views.InboxView	customer:notifications-inbox
+/accounts/notifications/update/	oscar.apps.communication.notifications.views.UpdateView	customer:notifications-update
+/accounts/order-status/<order_number>/<hash>/	oscar.apps.customer.views.AnonymousOrderDetailView	customer:anon-order
+/accounts/orders/	oscar.apps.customer.views.OrderHistoryView	customer:order-list
+/accounts/orders/<str:order_number>/	oscar.apps.customer.views.OrderDetailView	customer:order
+/accounts/orders/<str:order_number>/<int:line_id>/	oscar.apps.customer.views.OrderLineView	customer:order-line
+/accounts/profile/	oscar.apps.customer.views.ProfileView	customer:profile-view
+/accounts/profile/delete/	oscar.apps.customer.views.ProfileDeleteView	customer:profile-delete
+/accounts/profile/edit/	oscar.apps.customer.views.ProfileUpdateView	customer:profile-update
+/accounts/register/	oscar.apps.customer.views.AccountRegistrationView	customer:register
+/accounts/wishlists/	oscar.apps.customer.wishlists.views.WishListListView	customer:wishlists-list
+/accounts/wishlists/<str:key>/	oscar.apps.customer.wishlists.views.WishListDetailView	customer:wishlists-detail
+/accounts/wishlists/<str:key>/add/<int:product_pk>/	oscar.apps.customer.wishlists.views.WishListAddProduct	customer:wishlists-add-product
+/accounts/wishlists/<str:key>/delete/	oscar.apps.customer.wishlists.views.WishListDeleteView	customer:wishlists-delete
+/accounts/wishlists/<str:key>/lines/<int:line_pk>/delete/	oscar.apps.customer.wishlists.views.WishListRemoveProduct	customer:wishlists-remove-product
+/accounts/wishlists/<str:key>/lines/<int:line_pk>/move-to/<str:to_key>/	oscar.apps.customer.wishlists.views.WishListMoveProductToAnotherWishList	customer:wishlists-move-product-to-another
+/accounts/wishlists/<str:key>/products/<int:product_pk>/delete/	oscar.apps.customer.wishlists.views.WishListRemoveProduct	customer:wishlists-remove-product
+/accounts/wishlists/<str:key>/update/	oscar.apps.customer.wishlists.views.WishListUpdateView	customer:wishlists-update
+/accounts/wishlists/add/<int:product_pk>/	oscar.apps.customer.wishlists.views.WishListAddProduct	customer:wishlists-add-product
+/accounts/wishlists/create/	oscar.apps.customer.wishlists.views.WishListCreateView	customer:wishlists-create
+/accounts/wishlists/create/with-product/<int:product_pk>/	oscar.apps.customer.wishlists.views.WishListCreateView	customer:wishlists-create-with-product
+/admin/	django.contrib.admin.sites.index	admin:index
+/admin/<app_label>/	django.contrib.admin.sites.app_index	admin:app_list
+/admin/<url>	django.contrib.admin.sites.catch_all_view
+/admin/address/country/	django.contrib.admin.options.changelist_view	admin:address_country_changelist
+/admin/address/country/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/address/country/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:address_country_change
+/admin/address/country/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:address_country_delete
+/admin/address/country/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:address_country_history
+/admin/address/country/add/	django.contrib.admin.options.add_view	admin:address_country_add
+/admin/address/useraddress/	django.contrib.admin.options.changelist_view	admin:address_useraddress_changelist
+/admin/address/useraddress/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/address/useraddress/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:address_useraddress_change
+/admin/address/useraddress/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:address_useraddress_delete
+/admin/address/useraddress/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:address_useraddress_history
+/admin/address/useraddress/add/	django.contrib.admin.options.add_view	admin:address_useraddress_add
+/admin/analytics/productrecord/	django.contrib.admin.options.changelist_view	admin:analytics_productrecord_changelist
+/admin/analytics/productrecord/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/analytics/productrecord/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:analytics_productrecord_change
+/admin/analytics/productrecord/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:analytics_productrecord_delete
+/admin/analytics/productrecord/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:analytics_productrecord_history
+/admin/analytics/productrecord/add/	django.contrib.admin.options.add_view	admin:analytics_productrecord_add
+/admin/analytics/userproductview/	django.contrib.admin.options.changelist_view	admin:analytics_userproductview_changelist
+/admin/analytics/userproductview/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/analytics/userproductview/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:analytics_userproductview_change
+/admin/analytics/userproductview/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:analytics_userproductview_delete
+/admin/analytics/userproductview/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:analytics_userproductview_history
+/admin/analytics/userproductview/add/	django.contrib.admin.options.add_view	admin:analytics_userproductview_add
+/admin/analytics/userrecord/	django.contrib.admin.options.changelist_view	admin:analytics_userrecord_changelist
+/admin/analytics/userrecord/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/analytics/userrecord/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:analytics_userrecord_change
+/admin/analytics/userrecord/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:analytics_userrecord_delete
+/admin/analytics/userrecord/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:analytics_userrecord_history
+/admin/analytics/userrecord/add/	django.contrib.admin.options.add_view	admin:analytics_userrecord_add
+/admin/analytics/usersearch/	django.contrib.admin.options.changelist_view	admin:analytics_usersearch_changelist
+/admin/analytics/usersearch/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/analytics/usersearch/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:analytics_usersearch_change
+/admin/analytics/usersearch/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:analytics_usersearch_delete
+/admin/analytics/usersearch/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:analytics_usersearch_history
+/admin/analytics/usersearch/add/	django.contrib.admin.options.add_view	admin:analytics_usersearch_add
+/admin/auth/group/	django.contrib.admin.options.changelist_view	admin:auth_group_changelist
+/admin/auth/group/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/auth/group/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:auth_group_change
+/admin/auth/group/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:auth_group_delete
+/admin/auth/group/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:auth_group_history
+/admin/auth/group/add/	django.contrib.admin.options.add_view	admin:auth_group_add
+/admin/auth/user/	django.contrib.admin.options.changelist_view	admin:auth_user_changelist
+/admin/auth/user/<id>/password/	django.contrib.auth.admin.user_change_password	admin:auth_user_password_change
+/admin/auth/user/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/auth/user/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:auth_user_change
+/admin/auth/user/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:auth_user_delete
+/admin/auth/user/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:auth_user_history
+/admin/auth/user/add/	django.contrib.auth.admin.add_view	admin:auth_user_add
+/admin/autocomplete/	django.contrib.admin.sites.autocomplete_view	admin:autocomplete
+/admin/basket/basket/	django.contrib.admin.options.changelist_view	admin:basket_basket_changelist
+/admin/basket/basket/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/basket/basket/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:basket_basket_change
+/admin/basket/basket/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:basket_basket_delete
+/admin/basket/basket/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:basket_basket_history
+/admin/basket/basket/add/	django.contrib.admin.options.add_view	admin:basket_basket_add
+/admin/basket/line/	django.contrib.admin.options.changelist_view	admin:basket_line_changelist
+/admin/basket/line/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/basket/line/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:basket_line_change
+/admin/basket/line/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:basket_line_delete
+/admin/basket/line/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:basket_line_history
+/admin/basket/line/add/	django.contrib.admin.options.add_view	admin:basket_line_add
+/admin/basket/lineattribute/	django.contrib.admin.options.changelist_view	admin:basket_lineattribute_changelist
+/admin/basket/lineattribute/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/basket/lineattribute/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:basket_lineattribute_change
+/admin/basket/lineattribute/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:basket_lineattribute_delete
+/admin/basket/lineattribute/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:basket_lineattribute_history
+/admin/basket/lineattribute/add/	django.contrib.admin.options.add_view	admin:basket_lineattribute_add
+/admin/catalogue/attributeoptiongroup/	django.contrib.admin.options.changelist_view	admin:catalogue_attributeoptiongroup_changelist
+/admin/catalogue/attributeoptiongroup/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/catalogue/attributeoptiongroup/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:catalogue_attributeoptiongroup_change
+/admin/catalogue/attributeoptiongroup/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:catalogue_attributeoptiongroup_delete
+/admin/catalogue/attributeoptiongroup/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:catalogue_attributeoptiongroup_history
+/admin/catalogue/attributeoptiongroup/add/	django.contrib.admin.options.add_view	admin:catalogue_attributeoptiongroup_add
+/admin/catalogue/category/	treebeard.admin.changelist_view	admin:catalogue_category_changelist
+/admin/catalogue/category/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/catalogue/category/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:catalogue_category_change
+/admin/catalogue/category/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:catalogue_category_delete
+/admin/catalogue/category/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:catalogue_category_history
+/admin/catalogue/category/add/	django.contrib.admin.options.add_view	admin:catalogue_category_add
+/admin/catalogue/category/jsi18n/	django.views.i18n.JavaScriptCatalog	admin:javascript-catalog
+/admin/catalogue/category/move/	treebeard.admin.move_node
+/admin/catalogue/option/	django.contrib.admin.options.changelist_view	admin:catalogue_option_changelist
+/admin/catalogue/option/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/catalogue/option/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:catalogue_option_change
+/admin/catalogue/option/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:catalogue_option_delete
+/admin/catalogue/option/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:catalogue_option_history
+/admin/catalogue/option/add/	django.contrib.admin.options.add_view	admin:catalogue_option_add
+/admin/catalogue/product/	django.contrib.admin.options.changelist_view	admin:catalogue_product_changelist
+/admin/catalogue/product/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/catalogue/product/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:catalogue_product_change
+/admin/catalogue/product/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:catalogue_product_delete
+/admin/catalogue/product/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:catalogue_product_history
+/admin/catalogue/product/add/	django.contrib.admin.options.add_view	admin:catalogue_product_add
+/admin/catalogue/productattribute/	django.contrib.admin.options.changelist_view	admin:catalogue_productattribute_changelist
+/admin/catalogue/productattribute/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/catalogue/productattribute/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:catalogue_productattribute_change
+/admin/catalogue/productattribute/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:catalogue_productattribute_delete
+/admin/catalogue/productattribute/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:catalogue_productattribute_history
+/admin/catalogue/productattribute/add/	django.contrib.admin.options.add_view	admin:catalogue_productattribute_add
+/admin/catalogue/productattributevalue/	django.contrib.admin.options.changelist_view	admin:catalogue_productattributevalue_changelist
+/admin/catalogue/productattributevalue/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/catalogue/productattributevalue/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:catalogue_productattributevalue_change
+/admin/catalogue/productattributevalue/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:catalogue_productattributevalue_delete
+/admin/catalogue/productattributevalue/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:catalogue_productattributevalue_history
+/admin/catalogue/productattributevalue/add/	django.contrib.admin.options.add_view	admin:catalogue_productattributevalue_add
+/admin/catalogue/productcategory/	django.contrib.admin.options.changelist_view	admin:catalogue_productcategory_changelist
+/admin/catalogue/productcategory/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/catalogue/productcategory/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:catalogue_productcategory_change
+/admin/catalogue/productcategory/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:catalogue_productcategory_delete
+/admin/catalogue/productcategory/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:catalogue_productcategory_history
+/admin/catalogue/productcategory/add/	django.contrib.admin.options.add_view	admin:catalogue_productcategory_add
+/admin/catalogue/productclass/	django.contrib.admin.options.changelist_view	admin:catalogue_productclass_changelist
+/admin/catalogue/productclass/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/catalogue/productclass/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:catalogue_productclass_change
+/admin/catalogue/productclass/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:catalogue_productclass_delete
+/admin/catalogue/productclass/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:catalogue_productclass_history
+/admin/catalogue/productclass/add/	django.contrib.admin.options.add_view	admin:catalogue_productclass_add
+/admin/catalogue/productimage/	django.contrib.admin.options.changelist_view	admin:catalogue_productimage_changelist
+/admin/catalogue/productimage/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/catalogue/productimage/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:catalogue_productimage_change
+/admin/catalogue/productimage/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:catalogue_productimage_delete
+/admin/catalogue/productimage/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:catalogue_productimage_history
+/admin/catalogue/productimage/add/	django.contrib.admin.options.add_view	admin:catalogue_productimage_add
+/admin/communication/communicationeventtype/	django.contrib.admin.options.changelist_view	admin:communication_communicationeventtype_changelist
+/admin/communication/communicationeventtype/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/communication/communicationeventtype/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:communication_communicationeventtype_change
+/admin/communication/communicationeventtype/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:communication_communicationeventtype_delete
+/admin/communication/communicationeventtype/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:communication_communicationeventtype_history
+/admin/communication/communicationeventtype/add/	django.contrib.admin.options.add_view	admin:communication_communicationeventtype_add
+/admin/communication/email/	django.contrib.admin.options.changelist_view	admin:communication_email_changelist
+/admin/communication/email/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/communication/email/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:communication_email_change
+/admin/communication/email/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:communication_email_delete
+/admin/communication/email/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:communication_email_history
+/admin/communication/email/add/	django.contrib.admin.options.add_view	admin:communication_email_add
+/admin/communication/notification/	django.contrib.admin.options.changelist_view	admin:communication_notification_changelist
+/admin/communication/notification/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/communication/notification/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:communication_notification_change
+/admin/communication/notification/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:communication_notification_delete
+/admin/communication/notification/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:communication_notification_history
+/admin/communication/notification/add/	django.contrib.admin.options.add_view	admin:communication_notification_add
+/admin/flatpages/flatpage/	django.contrib.admin.options.changelist_view	admin:flatpages_flatpage_changelist
+/admin/flatpages/flatpage/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/flatpages/flatpage/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:flatpages_flatpage_change
+/admin/flatpages/flatpage/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:flatpages_flatpage_delete
+/admin/flatpages/flatpage/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:flatpages_flatpage_history
+/admin/flatpages/flatpage/add/	django.contrib.admin.options.add_view	admin:flatpages_flatpage_add
+/admin/jsi18n/	django.contrib.admin.sites.i18n_javascript	admin:jsi18n
+/admin/login/	django.contrib.admin.sites.login	admin:login
+/admin/logout/	django.contrib.admin.sites.logout	admin:logout
+/admin/offer/benefit/	django.contrib.admin.options.changelist_view	admin:offer_benefit_changelist
+/admin/offer/benefit/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/offer/benefit/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:offer_benefit_change
+/admin/offer/benefit/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:offer_benefit_delete
+/admin/offer/benefit/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:offer_benefit_history
+/admin/offer/benefit/add/	django.contrib.admin.options.add_view	admin:offer_benefit_add
+/admin/offer/condition/	django.contrib.admin.options.changelist_view	admin:offer_condition_changelist
+/admin/offer/condition/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/offer/condition/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:offer_condition_change
+/admin/offer/condition/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:offer_condition_delete
+/admin/offer/condition/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:offer_condition_history
+/admin/offer/condition/add/	django.contrib.admin.options.add_view	admin:offer_condition_add
+/admin/offer/conditionaloffer/	django.contrib.admin.options.changelist_view	admin:offer_conditionaloffer_changelist
+/admin/offer/conditionaloffer/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/offer/conditionaloffer/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:offer_conditionaloffer_change
+/admin/offer/conditionaloffer/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:offer_conditionaloffer_delete
+/admin/offer/conditionaloffer/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:offer_conditionaloffer_history
+/admin/offer/conditionaloffer/add/	django.contrib.admin.options.add_view	admin:offer_conditionaloffer_add
+/admin/offer/range/	django.contrib.admin.options.changelist_view	admin:offer_range_changelist
+/admin/offer/range/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/offer/range/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:offer_range_change
+/admin/offer/range/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:offer_range_delete
+/admin/offer/range/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:offer_range_history
+/admin/offer/range/add/	django.contrib.admin.options.add_view	admin:offer_range_add
+/admin/order/billingaddress/	django.contrib.admin.options.changelist_view	admin:order_billingaddress_changelist
+/admin/order/billingaddress/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/order/billingaddress/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:order_billingaddress_change
+/admin/order/billingaddress/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:order_billingaddress_delete
+/admin/order/billingaddress/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:order_billingaddress_history
+/admin/order/billingaddress/add/	django.contrib.admin.options.add_view	admin:order_billingaddress_add
+/admin/order/communicationevent/	django.contrib.admin.options.changelist_view	admin:order_communicationevent_changelist
+/admin/order/communicationevent/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/order/communicationevent/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:order_communicationevent_change
+/admin/order/communicationevent/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:order_communicationevent_delete
+/admin/order/communicationevent/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:order_communicationevent_history
+/admin/order/communicationevent/add/	django.contrib.admin.options.add_view	admin:order_communicationevent_add
+/admin/order/line/	django.contrib.admin.options.changelist_view	admin:order_line_changelist
+/admin/order/line/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/order/line/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:order_line_change
+/admin/order/line/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:order_line_delete
+/admin/order/line/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:order_line_history
+/admin/order/line/add/	django.contrib.admin.options.add_view	admin:order_line_add
+/admin/order/lineattribute/	django.contrib.admin.options.changelist_view	admin:order_lineattribute_changelist
+/admin/order/lineattribute/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/order/lineattribute/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:order_lineattribute_change
+/admin/order/lineattribute/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:order_lineattribute_delete
+/admin/order/lineattribute/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:order_lineattribute_history
+/admin/order/lineattribute/add/	django.contrib.admin.options.add_view	admin:order_lineattribute_add
+/admin/order/lineprice/	django.contrib.admin.options.changelist_view	admin:order_lineprice_changelist
+/admin/order/lineprice/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/order/lineprice/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:order_lineprice_change
+/admin/order/lineprice/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:order_lineprice_delete
+/admin/order/lineprice/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:order_lineprice_history
+/admin/order/lineprice/add/	django.contrib.admin.options.add_view	admin:order_lineprice_add
+/admin/order/order/	django.contrib.admin.options.changelist_view	admin:order_order_changelist
+/admin/order/order/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/order/order/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:order_order_change
+/admin/order/order/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:order_order_delete
+/admin/order/order/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:order_order_history
+/admin/order/order/add/	django.contrib.admin.options.add_view	admin:order_order_add
+/admin/order/orderdiscount/	django.contrib.admin.options.changelist_view	admin:order_orderdiscount_changelist
+/admin/order/orderdiscount/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/order/orderdiscount/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:order_orderdiscount_change
+/admin/order/orderdiscount/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:order_orderdiscount_delete
+/admin/order/orderdiscount/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:order_orderdiscount_history
+/admin/order/orderdiscount/add/	django.contrib.admin.options.add_view	admin:order_orderdiscount_add
+/admin/order/ordernote/	django.contrib.admin.options.changelist_view	admin:order_ordernote_changelist
+/admin/order/ordernote/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/order/ordernote/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:order_ordernote_change
+/admin/order/ordernote/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:order_ordernote_delete
+/admin/order/ordernote/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:order_ordernote_history
+/admin/order/ordernote/add/	django.contrib.admin.options.add_view	admin:order_ordernote_add
+/admin/order/orderstatuschange/	django.contrib.admin.options.changelist_view	admin:order_orderstatuschange_changelist
+/admin/order/orderstatuschange/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/order/orderstatuschange/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:order_orderstatuschange_change
+/admin/order/orderstatuschange/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:order_orderstatuschange_delete
+/admin/order/orderstatuschange/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:order_orderstatuschange_history
+/admin/order/orderstatuschange/add/	django.contrib.admin.options.add_view	admin:order_orderstatuschange_add
+/admin/order/paymentevent/	django.contrib.admin.options.changelist_view	admin:order_paymentevent_changelist
+/admin/order/paymentevent/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/order/paymentevent/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:order_paymentevent_change
+/admin/order/paymentevent/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:order_paymentevent_delete
+/admin/order/paymentevent/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:order_paymentevent_history
+/admin/order/paymentevent/add/	django.contrib.admin.options.add_view	admin:order_paymentevent_add
+/admin/order/paymenteventtype/	django.contrib.admin.options.changelist_view	admin:order_paymenteventtype_changelist
+/admin/order/paymenteventtype/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/order/paymenteventtype/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:order_paymenteventtype_change
+/admin/order/paymenteventtype/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:order_paymenteventtype_delete
+/admin/order/paymenteventtype/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:order_paymenteventtype_history
+/admin/order/paymenteventtype/add/	django.contrib.admin.options.add_view	admin:order_paymenteventtype_add
+/admin/order/shippingaddress/	django.contrib.admin.options.changelist_view	admin:order_shippingaddress_changelist
+/admin/order/shippingaddress/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/order/shippingaddress/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:order_shippingaddress_change
+/admin/order/shippingaddress/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:order_shippingaddress_delete
+/admin/order/shippingaddress/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:order_shippingaddress_history
+/admin/order/shippingaddress/add/	django.contrib.admin.options.add_view	admin:order_shippingaddress_add
+/admin/order/shippingevent/	django.contrib.admin.options.changelist_view	admin:order_shippingevent_changelist
+/admin/order/shippingevent/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/order/shippingevent/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:order_shippingevent_change
+/admin/order/shippingevent/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:order_shippingevent_delete
+/admin/order/shippingevent/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:order_shippingevent_history
+/admin/order/shippingevent/add/	django.contrib.admin.options.add_view	admin:order_shippingevent_add
+/admin/order/shippingeventtype/	django.contrib.admin.options.changelist_view	admin:order_shippingeventtype_changelist
+/admin/order/shippingeventtype/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/order/shippingeventtype/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:order_shippingeventtype_change
+/admin/order/shippingeventtype/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:order_shippingeventtype_delete
+/admin/order/shippingeventtype/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:order_shippingeventtype_history
+/admin/order/shippingeventtype/add/	django.contrib.admin.options.add_view	admin:order_shippingeventtype_add
+/admin/order/surcharge/	django.contrib.admin.options.changelist_view	admin:order_surcharge_changelist
+/admin/order/surcharge/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/order/surcharge/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:order_surcharge_change
+/admin/order/surcharge/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:order_surcharge_delete
+/admin/order/surcharge/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:order_surcharge_history
+/admin/order/surcharge/add/	django.contrib.admin.options.add_view	admin:order_surcharge_add
+/admin/partner/partner/	django.contrib.admin.options.changelist_view	admin:partner_partner_changelist
+/admin/partner/partner/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/partner/partner/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:partner_partner_change
+/admin/partner/partner/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:partner_partner_delete
+/admin/partner/partner/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:partner_partner_history
+/admin/partner/partner/add/	django.contrib.admin.options.add_view	admin:partner_partner_add
+/admin/partner/stockrecord/	django.contrib.admin.options.changelist_view	admin:partner_stockrecord_changelist
+/admin/partner/stockrecord/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/partner/stockrecord/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:partner_stockrecord_change
+/admin/partner/stockrecord/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:partner_stockrecord_delete
+/admin/partner/stockrecord/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:partner_stockrecord_history
+/admin/partner/stockrecord/add/	django.contrib.admin.options.add_view	admin:partner_stockrecord_add
+/admin/password_change/	django.contrib.admin.sites.password_change	admin:password_change
+/admin/password_change/done/	django.contrib.admin.sites.password_change_done	admin:password_change_done
+/admin/payment/bankcard/	django.contrib.admin.options.changelist_view	admin:payment_bankcard_changelist
+/admin/payment/bankcard/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/payment/bankcard/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:payment_bankcard_change
+/admin/payment/bankcard/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:payment_bankcard_delete
+/admin/payment/bankcard/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:payment_bankcard_history
+/admin/payment/bankcard/add/	django.contrib.admin.options.add_view	admin:payment_bankcard_add
+/admin/payment/source/	django.contrib.admin.options.changelist_view	admin:payment_source_changelist
+/admin/payment/source/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/payment/source/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:payment_source_change
+/admin/payment/source/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:payment_source_delete
+/admin/payment/source/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:payment_source_history
+/admin/payment/source/add/	django.contrib.admin.options.add_view	admin:payment_source_add
+/admin/payment/sourcetype/	django.contrib.admin.options.changelist_view	admin:payment_sourcetype_changelist
+/admin/payment/sourcetype/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/payment/sourcetype/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:payment_sourcetype_change
+/admin/payment/sourcetype/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:payment_sourcetype_delete
+/admin/payment/sourcetype/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:payment_sourcetype_history
+/admin/payment/sourcetype/add/	django.contrib.admin.options.add_view	admin:payment_sourcetype_add
+/admin/payment/transaction/	django.contrib.admin.options.changelist_view	admin:payment_transaction_changelist
+/admin/payment/transaction/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/payment/transaction/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:payment_transaction_change
+/admin/payment/transaction/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:payment_transaction_delete
+/admin/payment/transaction/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:payment_transaction_history
+/admin/payment/transaction/add/	django.contrib.admin.options.add_view	admin:payment_transaction_add
+/admin/r/<int:content_type_id>/<path:object_id>/	django.contrib.contenttypes.views.shortcut	admin:view_on_site
+/admin/reviews/productreview/	django.contrib.admin.options.changelist_view	admin:reviews_productreview_changelist
+/admin/reviews/productreview/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/reviews/productreview/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:reviews_productreview_change
+/admin/reviews/productreview/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:reviews_productreview_delete
+/admin/reviews/productreview/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:reviews_productreview_history
+/admin/reviews/productreview/add/	django.contrib.admin.options.add_view	admin:reviews_productreview_add
+/admin/reviews/vote/	django.contrib.admin.options.changelist_view	admin:reviews_vote_changelist
+/admin/reviews/vote/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/reviews/vote/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:reviews_vote_change
+/admin/reviews/vote/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:reviews_vote_delete
+/admin/reviews/vote/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:reviews_vote_history
+/admin/reviews/vote/add/	django.contrib.admin.options.add_view	admin:reviews_vote_add
+/admin/shipping/orderanditemcharges/	django.contrib.admin.options.changelist_view	admin:shipping_orderanditemcharges_changelist
+/admin/shipping/orderanditemcharges/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/shipping/orderanditemcharges/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:shipping_orderanditemcharges_change
+/admin/shipping/orderanditemcharges/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:shipping_orderanditemcharges_delete
+/admin/shipping/orderanditemcharges/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:shipping_orderanditemcharges_history
+/admin/shipping/orderanditemcharges/add/	django.contrib.admin.options.add_view	admin:shipping_orderanditemcharges_add
+/admin/shipping/weightbased/	django.contrib.admin.options.changelist_view	admin:shipping_weightbased_changelist
+/admin/shipping/weightbased/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/shipping/weightbased/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:shipping_weightbased_change
+/admin/shipping/weightbased/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:shipping_weightbased_delete
+/admin/shipping/weightbased/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:shipping_weightbased_history
+/admin/shipping/weightbased/add/	django.contrib.admin.options.add_view	admin:shipping_weightbased_add
+/admin/sites/site/	django.contrib.admin.options.changelist_view	admin:sites_site_changelist
+/admin/sites/site/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/sites/site/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:sites_site_change
+/admin/sites/site/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:sites_site_delete
+/admin/sites/site/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:sites_site_history
+/admin/sites/site/add/	django.contrib.admin.options.add_view	admin:sites_site_add
+/admin/voucher/voucher/	django.contrib.admin.options.changelist_view	admin:voucher_voucher_changelist
+/admin/voucher/voucher/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/voucher/voucher/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:voucher_voucher_change
+/admin/voucher/voucher/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:voucher_voucher_delete
+/admin/voucher/voucher/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:voucher_voucher_history
+/admin/voucher/voucher/add/	django.contrib.admin.options.add_view	admin:voucher_voucher_add
+/admin/voucher/voucherapplication/	django.contrib.admin.options.changelist_view	admin:voucher_voucherapplication_changelist
+/admin/voucher/voucherapplication/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/voucher/voucherapplication/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:voucher_voucherapplication_change
+/admin/voucher/voucherapplication/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:voucher_voucherapplication_delete
+/admin/voucher/voucherapplication/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:voucher_voucherapplication_history
+/admin/voucher/voucherapplication/add/	django.contrib.admin.options.add_view	admin:voucher_voucherapplication_add
+/admin/wishlists/line/	django.contrib.admin.options.changelist_view	admin:wishlists_line_changelist
+/admin/wishlists/line/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/wishlists/line/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:wishlists_line_change
+/admin/wishlists/line/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:wishlists_line_delete
+/admin/wishlists/line/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:wishlists_line_history
+/admin/wishlists/line/add/	django.contrib.admin.options.add_view	admin:wishlists_line_add
+/admin/wishlists/wishlist/	django.contrib.admin.options.changelist_view	admin:wishlists_wishlist_changelist
+/admin/wishlists/wishlist/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/wishlists/wishlist/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:wishlists_wishlist_change
+/admin/wishlists/wishlist/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:wishlists_wishlist_delete
+/admin/wishlists/wishlist/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:wishlists_wishlist_history
+/admin/wishlists/wishlist/add/	django.contrib.admin.options.add_view	admin:wishlists_wishlist_add
+/admin/wishlists/wishlistsharedemail/	django.contrib.admin.options.changelist_view	admin:wishlists_wishlistsharedemail_changelist
+/admin/wishlists/wishlistsharedemail/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/wishlists/wishlistsharedemail/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:wishlists_wishlistsharedemail_change
+/admin/wishlists/wishlistsharedemail/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:wishlists_wishlistsharedemail_delete
+/admin/wishlists/wishlistsharedemail/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:wishlists_wishlistsharedemail_history
+/admin/wishlists/wishlistsharedemail/add/	django.contrib.admin.options.add_view	admin:wishlists_wishlistsharedemail_add
+/basket/	oscar.apps.basket.views.BasketView	basket:summary
+/basket/add/<int:pk>/	oscar.apps.basket.views.BasketAddView	basket:add
+/basket/saved/	oscar.apps.basket.views.SavedView	basket:saved
+/basket/vouchers/<int:pk>/remove/	oscar.apps.basket.views.VoucherRemoveView	basket:vouchers-remove
+/basket/vouchers/add/	oscar.apps.basket.views.VoucherAddView	basket:vouchers-add
+/catalogue/	apps.catalogue.views.CatalogueView	catalogue:index
+/catalogue/<product_slug>_<pk>/	oscar.apps.catalogue.views.ProductDetailView	catalogue:detail
+/catalogue/<product_slug>_<product_pk>/reviews/	oscar.apps.catalogue.reviews.views.ProductReviewList	catalogue:reviews-list
+/catalogue/<product_slug>_<product_pk>/reviews/<int:pk>/	oscar.apps.catalogue.reviews.views.ProductReviewDetail	catalogue:reviews-detail
+/catalogue/<product_slug>_<product_pk>/reviews/<int:pk>/vote/	oscar.apps.catalogue.reviews.views.AddVoteView	catalogue:reviews-vote
+/catalogue/<product_slug>_<product_pk>/reviews/add/	oscar.apps.catalogue.reviews.views.CreateProductReview	catalogue:reviews-add
+/catalogue/category/<category_slug>_<pk>/	apps.catalogue.views.ProductCategoryView	catalogue:category
+/catalogue/ranges/<slug>/	oscar.apps.offer.views.RangeDetailView	catalogue:range
+/checkout/	oscar.apps.checkout.views.IndexView	checkout:index
+/checkout/payment-details/	oscar.apps.checkout.views.PaymentDetailsView	checkout:payment-details
+/checkout/payment-method/	oscar.apps.checkout.views.PaymentMethodView	checkout:payment-method
+/checkout/preview/	oscar.apps.checkout.views.PaymentDetailsView	checkout:preview
+/checkout/shipping-address/	oscar.apps.checkout.views.ShippingAddressView	checkout:shipping-address
+/checkout/shipping-method/	oscar.apps.checkout.views.ShippingMethodView	checkout:shipping-method
+/checkout/thank-you/	oscar.apps.checkout.views.ThankYouView	checkout:thank-you
+/checkout/user-address/delete/<int:pk>/	oscar.apps.checkout.views.UserAddressDeleteView	checkout:user-address-delete
+/checkout/user-address/edit/<int:pk>/	oscar.apps.checkout.views.UserAddressUpdateView	checkout:user-address-update
+/dashboard/	oscar.apps.dashboard.views.IndexView	dashboard:index
+/dashboard/catalogue/	oscar.apps.dashboard.catalogue.views.ProductListView	dashboard:catalogue-product-list
+/dashboard/catalogue/attribute-option-group/	oscar.apps.dashboard.catalogue.views.AttributeOptionGroupListView	dashboard:catalogue-attribute-option-group-list
+/dashboard/catalogue/attribute-option-group/<str:pk>/delete/	oscar.apps.dashboard.catalogue.views.AttributeOptionGroupDeleteView	dashboard:catalogue-attribute-option-group-delete
+/dashboard/catalogue/attribute-option-group/<str:pk>/update/	oscar.apps.dashboard.catalogue.views.AttributeOptionGroupUpdateView	dashboard:catalogue-attribute-option-group-update
+/dashboard/catalogue/attribute-option-group/create/	oscar.apps.dashboard.catalogue.views.AttributeOptionGroupCreateView	dashboard:catalogue-attribute-option-group-create
+/dashboard/catalogue/categories/	oscar.apps.dashboard.catalogue.views.CategoryListView	dashboard:catalogue-category-list
+/dashboard/catalogue/categories/<int:pk>/	oscar.apps.dashboard.catalogue.views.CategoryDetailListView	dashboard:catalogue-category-detail-list
+/dashboard/catalogue/categories/<int:pk>/delete/	oscar.apps.dashboard.catalogue.views.CategoryDeleteView	dashboard:catalogue-category-delete
+/dashboard/catalogue/categories/<int:pk>/update/	oscar.apps.dashboard.catalogue.views.CategoryUpdateView	dashboard:catalogue-category-update
+/dashboard/catalogue/categories/create/	oscar.apps.dashboard.catalogue.views.CategoryCreateView	dashboard:catalogue-category-create
+/dashboard/catalogue/categories/create/<int:parent>/	oscar.apps.dashboard.catalogue.views.CategoryCreateView	dashboard:catalogue-category-create-child
+/dashboard/catalogue/option/	oscar.apps.dashboard.catalogue.views.OptionListView	dashboard:catalogue-option-list
+/dashboard/catalogue/option/<str:pk>/delete/	oscar.apps.dashboard.catalogue.views.OptionDeleteView	dashboard:catalogue-option-delete
+/dashboard/catalogue/option/<str:pk>/update/	oscar.apps.dashboard.catalogue.views.OptionUpdateView	dashboard:catalogue-option-update
+/dashboard/catalogue/option/create/	oscar.apps.dashboard.catalogue.views.OptionCreateView	dashboard:catalogue-option-create
+/dashboard/catalogue/product-lookup/	oscar.apps.dashboard.catalogue.views.ProductLookupView	dashboard:catalogue-product-lookup
+/dashboard/catalogue/product-type/<int:pk>/delete/	oscar.apps.dashboard.catalogue.views.ProductClassDeleteView	dashboard:catalogue-class-delete
+/dashboard/catalogue/product-type/<int:pk>/update/	oscar.apps.dashboard.catalogue.views.ProductClassUpdateView	dashboard:catalogue-class-update
+/dashboard/catalogue/product-type/create/	oscar.apps.dashboard.catalogue.views.ProductClassCreateView	dashboard:catalogue-class-create
+/dashboard/catalogue/product-types/	oscar.apps.dashboard.catalogue.views.ProductClassListView	dashboard:catalogue-class-list
+/dashboard/catalogue/products/<int:parent_pk>/create-variant/	oscar.apps.dashboard.catalogue.views.ProductCreateUpdateView	dashboard:catalogue-product-create-child
+/dashboard/catalogue/products/<int:pk>/	oscar.apps.dashboard.catalogue.views.ProductCreateUpdateView	dashboard:catalogue-product
+/dashboard/catalogue/products/<int:pk>/delete/	oscar.apps.dashboard.catalogue.views.ProductDeleteView	dashboard:catalogue-product-delete
+/dashboard/catalogue/products/create/	oscar.apps.dashboard.catalogue.views.ProductCreateRedirectView	dashboard:catalogue-product-create
+/dashboard/catalogue/products/create/<product_class_slug>/	oscar.apps.dashboard.catalogue.views.ProductCreateUpdateView	dashboard:catalogue-product-create
+/dashboard/catalogue/stock-alerts/	oscar.apps.dashboard.catalogue.views.StockAlertListView	dashboard:stock-alert-list
+/dashboard/comms/	oscar.apps.dashboard.communications.views.ListView	dashboard:comms-list
+/dashboard/comms/<slug>/	oscar.apps.dashboard.communications.views.UpdateView	dashboard:comms-update
+/dashboard/login/	oscar.apps.dashboard.views.LoginView	dashboard:login
+/dashboard/logout/	django.contrib.auth.views.LogoutView	dashboard:logout
+/dashboard/offers/	oscar.apps.dashboard.offers.views.OfferListView	dashboard:offer-list
+/dashboard/offers/<int:pk>/	oscar.apps.dashboard.offers.views.OfferDetailView	dashboard:offer-detail
+/dashboard/offers/<int:pk>/condition/	oscar.apps.dashboard.offers.views.OfferConditionView	dashboard:offer-condition
+/dashboard/offers/<int:pk>/delete/	oscar.apps.dashboard.offers.views.OfferDeleteView	dashboard:offer-delete
+/dashboard/offers/<int:pk>/incentive/	oscar.apps.dashboard.offers.views.OfferBenefitView	dashboard:offer-benefit
+/dashboard/offers/<int:pk>/metadata/	oscar.apps.dashboard.offers.views.OfferMetaDataView	dashboard:offer-metadata
+/dashboard/offers/<int:pk>/restrictions/	oscar.apps.dashboard.offers.views.OfferRestrictionsView	dashboard:offer-restrictions
+/dashboard/offers/new/condition/	oscar.apps.dashboard.offers.views.OfferConditionView	dashboard:offer-condition
+/dashboard/offers/new/incentive/	oscar.apps.dashboard.offers.views.OfferBenefitView	dashboard:offer-benefit
+/dashboard/offers/new/metadata/	oscar.apps.dashboard.offers.views.OfferMetaDataView	dashboard:offer-metadata
+/dashboard/offers/new/restrictions/	oscar.apps.dashboard.offers.views.OfferRestrictionsView	dashboard:offer-restrictions
+/dashboard/orders/	oscar.apps.dashboard.orders.views.OrderListView	dashboard:order-list
+/dashboard/orders/<str:number>/	oscar.apps.dashboard.orders.views.OrderDetailView	dashboard:order-detail
+/dashboard/orders/<str:number>/lines/<int:line_id>/	oscar.apps.dashboard.orders.views.LineDetailView	dashboard:order-line-detail
+/dashboard/orders/<str:number>/notes/<int:note_id>/	oscar.apps.dashboard.orders.views.OrderDetailView	dashboard:order-detail-note
+/dashboard/orders/<str:number>/shipping-address/	oscar.apps.dashboard.orders.views.ShippingAddressUpdateView	dashboard:order-shipping-address
+/dashboard/orders/statistics/	oscar.apps.dashboard.orders.views.OrderStatsView	dashboard:order-stats
+/dashboard/pages/	oscar.apps.dashboard.pages.views.PageListView	dashboard:page-list
+/dashboard/pages/create/	oscar.apps.dashboard.pages.views.PageCreateView	dashboard:page-create
+/dashboard/pages/delete/<str:pk>/	oscar.apps.dashboard.pages.views.PageDeleteView	dashboard:page-delete
+/dashboard/pages/update/<str:pk>/	oscar.apps.dashboard.pages.views.PageUpdateView	dashboard:page-update
+/dashboard/partners/	oscar.apps.dashboard.partners.views.PartnerListView	dashboard:partner-list
+/dashboard/partners/<int:partner_pk>/users/<int:user_pk>/link/	oscar.apps.dashboard.partners.views.PartnerUserLinkView	dashboard:partner-user-link
+/dashboard/partners/<int:partner_pk>/users/<int:user_pk>/unlink/	oscar.apps.dashboard.partners.views.PartnerUserUnlinkView	dashboard:partner-user-unlink
+/dashboard/partners/<int:partner_pk>/users/<int:user_pk>/update/	oscar.apps.dashboard.partners.views.PartnerUserUpdateView	dashboard:partner-user-update
+/dashboard/partners/<int:partner_pk>/users/add/	oscar.apps.dashboard.partners.views.PartnerUserCreateView	dashboard:partner-user-create
+/dashboard/partners/<int:partner_pk>/users/select/	oscar.apps.dashboard.partners.views.PartnerUserSelectView	dashboard:partner-user-select
+/dashboard/partners/<int:pk>/	oscar.apps.dashboard.partners.views.PartnerManageView	dashboard:partner-manage
+/dashboard/partners/<int:pk>/delete/	oscar.apps.dashboard.partners.views.PartnerDeleteView	dashboard:partner-delete
+/dashboard/partners/create/	oscar.apps.dashboard.partners.views.PartnerCreateView	dashboard:partner-create
+/dashboard/ranges/	oscar.apps.dashboard.ranges.views.RangeListView	dashboard:range-list
+/dashboard/ranges/<int:pk>/	oscar.apps.dashboard.ranges.views.RangeUpdateView	dashboard:range-update
+/dashboard/ranges/<int:pk>/delete/	oscar.apps.dashboard.ranges.views.RangeDeleteView	dashboard:range-delete
+/dashboard/ranges/<int:pk>/products/	oscar.apps.dashboard.ranges.views.RangeProductListView	dashboard:range-products
+/dashboard/ranges/<int:pk>/reorder/	oscar.apps.dashboard.ranges.views.RangeReorderView	dashboard:range-reorder
+/dashboard/ranges/create/	oscar.apps.dashboard.ranges.views.RangeCreateView	dashboard:range-create
+/dashboard/reports/	oscar.apps.dashboard.reports.views.IndexView	dashboard:reports-index
+/dashboard/reviews/	oscar.apps.dashboard.reviews.views.ReviewListView	dashboard:reviews-list
+/dashboard/reviews/<int:pk>/	oscar.apps.dashboard.reviews.views.ReviewUpdateView	dashboard:reviews-update
+/dashboard/reviews/<int:pk>/delete/	oscar.apps.dashboard.reviews.views.ReviewDeleteView	dashboard:reviews-delete
+/dashboard/shipping/weight-based/	oscar.apps.dashboard.shipping.views.WeightBasedListView	dashboard:shipping-method-list
+/dashboard/shipping/weight-based/<int:method_pk>/bands/<int:pk>/	oscar.apps.dashboard.shipping.views.WeightBandUpdateView	dashboard:shipping-method-band-edit
+/dashboard/shipping/weight-based/<int:method_pk>/bands/<int:pk>/delete/	oscar.apps.dashboard.shipping.views.WeightBandDeleteView	dashboard:shipping-method-band-delete
+/dashboard/shipping/weight-based/<int:pk>/	oscar.apps.dashboard.shipping.views.WeightBasedDetailView	dashboard:shipping-method-detail
+/dashboard/shipping/weight-based/<int:pk>/delete/	oscar.apps.dashboard.shipping.views.WeightBasedDeleteView	dashboard:shipping-method-delete
+/dashboard/shipping/weight-based/<int:pk>/edit/	oscar.apps.dashboard.shipping.views.WeightBasedUpdateView	dashboard:shipping-method-edit
+/dashboard/shipping/weight-based/create/	oscar.apps.dashboard.shipping.views.WeightBasedCreateView	dashboard:shipping-method-create
+/dashboard/users/	oscar.apps.dashboard.users.views.IndexView	dashboard:users-index
+/dashboard/users/<pk>/	oscar.apps.dashboard.users.views.UserDetailView	dashboard:user-detail
+/dashboard/users/<pk>/password-reset/	oscar.apps.dashboard.users.views.PasswordResetView	dashboard:user-password-reset
+/dashboard/users/alerts/	oscar.apps.dashboard.users.views.ProductAlertListView	dashboard:user-alert-list
+/dashboard/users/alerts/<pk>/delete/	oscar.apps.dashboard.users.views.ProductAlertDeleteView	dashboard:user-alert-delete
+/dashboard/users/alerts/<pk>/update/	oscar.apps.dashboard.users.views.ProductAlertUpdateView	dashboard:user-alert-update
+/dashboard/vouchers/	oscar.apps.dashboard.vouchers.views.VoucherListView	dashboard:voucher-list
+/dashboard/vouchers/create/	oscar.apps.dashboard.vouchers.views.VoucherCreateView	dashboard:voucher-create
+/dashboard/vouchers/delete/<int:pk>/	oscar.apps.dashboard.vouchers.views.VoucherDeleteView	dashboard:voucher-delete
+/dashboard/vouchers/sets/	oscar.apps.dashboard.vouchers.views.VoucherSetListView	dashboard:voucher-set-list
+/dashboard/vouchers/sets/create/	oscar.apps.dashboard.vouchers.views.VoucherSetCreateView	dashboard:voucher-set-create
+/dashboard/vouchers/sets/delete/<int:pk>/	oscar.apps.dashboard.vouchers.views.VoucherSetDeleteView	dashboard:voucher-set-delete
+/dashboard/vouchers/sets/detail/<int:pk>/	oscar.apps.dashboard.vouchers.views.VoucherSetDetailView	dashboard:voucher-set-detail
+/dashboard/vouchers/sets/download/<int:pk>/	oscar.apps.dashboard.vouchers.views.VoucherSetDownloadView	dashboard:voucher-set-download
+/dashboard/vouchers/sets/update/<int:pk>/	oscar.apps.dashboard.vouchers.views.VoucherSetUpdateView	dashboard:voucher-set-update
+/dashboard/vouchers/stats/<int:pk>/	oscar.apps.dashboard.vouchers.views.VoucherStatsView	dashboard:voucher-stats
+/dashboard/vouchers/update/<int:pk>/	oscar.apps.dashboard.vouchers.views.VoucherUpdateView	dashboard:voucher-update
+/i18n/setlang/	django.views.i18n.set_language	set_language
+/media/<path>	django.views.static.serve
+/offers/	oscar.apps.offer.views.OfferListView	offer:list
+/offers/<slug>/	oscar.apps.offer.views.OfferDetailView	offer:detail
+/password-reset/	django.contrib.auth.views.PasswordResetView	password-reset
+/password-reset/complete/	django.contrib.auth.views.PasswordResetCompleteView	password-reset-complete
+/password-reset/confirm/<str:uidb64>/<str:token>/	django.contrib.auth.views.PasswordResetConfirmView	password-reset-confirm
+/password-reset/done/	django.contrib.auth.views.PasswordResetDoneView	password-reset-done
+/search/	oscar.apps.search.views.search.FacetedSearchView	search:search
+/static/<path>	django.views.static.serve
+/wishlists/<str:key>/	oscar.apps.wishlists.views.WishListView	wishlists:detail

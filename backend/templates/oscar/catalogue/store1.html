@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List</title>
+</head>
+<body>
+    <h1>Product List</h1>
+
+    <!-- Display Categories -->
+    <div>
+        <h2>Categories</h2>
+        <ul>
+            <li><a href="{% url 'store' %}">All</a></li>
+            {% for category in links %}
+                <a href="{% url 'product_list_by_category' category.slug %}">{{ category.name }}</a>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <!-- Display Products -->
+    <div>
+        <h2>Products</h2>
+        {% if selected_category %}
+            <h3>Category: {{ selected_category.name }}</h3>
+        {% endif %}
+        <ul>
+            {% for product in products %}
+                <li>
+                   {% for image in product.images.all %}
+                   <img src="{{image.original.url}}" alt="">
+                   {% endfor %}
+                </li>
+            {% empty %}
+                <li>No products found.</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
